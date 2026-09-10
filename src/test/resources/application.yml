@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:alumni_test;MODE=PostgreSQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+phantombuster:
+  api-key: test-key
+  agent-id: test-agent
+  base-url: https://api.phantombuster.com/api/v2
+  result-limit: 20
+  polling:
+    interval-millis: 10
+    max-attempts: 2

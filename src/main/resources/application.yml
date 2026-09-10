@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: alumni-linkedin-searcher
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/alumni_db}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: ${SERVER_PORT:8080}
+
+phantombuster:
+  api-key: ${PHANTOMBUSTER_API_KEY:}
+  agent-id: ${PHANTOMBUSTER_AGENT_ID:}
+  base-url: ${PHANTOMBUSTER_BASE_URL:https://api.phantombuster.com/api/v2}
+  result-limit: ${PHANTOMBUSTER_RESULT_LIMIT:20}
+  polling:
+    interval-millis: ${PHANTOMBUSTER_POLL_INTERVAL_MS:5000}
+    max-attempts: ${PHANTOMBUSTER_POLL_MAX_ATTEMPTS:60}
+
+logging:
+  level:
+    com.alumni.linkedinsearcher: DEBUG
